@@ -1,9 +1,11 @@
 <script>
 import Header from './components/Header.vue';
+import Main from './components/Main.vue';
 
 export default {
   components: {
-    Header
+    Header,
+    Main,
   },
   data() {
     return {
@@ -16,6 +18,7 @@ export default {
 
 <template>
   <Header />
+  <Main />
 </template>
 
 <style>
@@ -45,5 +48,9 @@ li {
 .row {
   display: flex;
   flex-direction: row;
+}
+
+img {
+  max-width: 100%;
 }
 </style>
