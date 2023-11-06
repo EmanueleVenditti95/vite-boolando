@@ -125,6 +125,7 @@
 <style lang="scss" scoped>
 .row {
     flex-wrap: wrap;
+    margin: 20px 0;
 }
 
 .card {

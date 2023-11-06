@@ -7,9 +7,9 @@
             <nav class="row">
                 <section class="col">
                     <ul>
-                        <li><a class="white-text" href="">Donna</a></li>
-                        <li><a class="white-text" href="">Uomo</a></li>
-                        <li><a class="white-text" href="">Bambino</a></li>
+                        <li><a href="">Donna</a></li>
+                        <li><a href="">Uomo</a></li>
+                        <li><a href="">Bambino</a></li>
                     </ul>
                 </section>
 
@@ -19,9 +19,9 @@
 
                 <section class="col">
                     <ul>
-                        <li><a class="white-text" href=""><i class="fa-regular fa-user"></i></a></li>
-                        <li><a class="white-text" href=""><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a class="white-text" href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                        <li><a href=""><i class="fa-regular fa-user"></i></a></li>
+                        <li><a href=""><i class="fa-regular fa-heart"></i></a></li>
+                        <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
                     </ul>
                 </section>
             </nav>
@@ -36,12 +36,6 @@
 
 li {
     display: inline;
-
-    a {
-        color: white;
-        font-size: 12px;
-        padding: 0 10px;
-    }
 }
 
 .viewport-container {
