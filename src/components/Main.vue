@@ -123,6 +123,10 @@
 </template>
 
 <style lang="scss" scoped>
+.container {
+    padding-bottom: 80px;
+}
+
 .row {
     flex-wrap: wrap;
     margin: 20px 0;

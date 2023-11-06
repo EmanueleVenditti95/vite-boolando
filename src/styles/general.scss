@@ -6,10 +6,6 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-body {
-    position: relative;
-}
-
 ol,
 ul,
 li {
@@ -42,4 +38,18 @@ a {
 
 .flex {
     display: flex;
+}
+
+.container-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+body {
+    height: 100vh;
+    position: relative;
 }

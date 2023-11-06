@@ -27,6 +27,9 @@
 <style lang="scss" scoped>
 .footer-container {
     background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 
     .row {
         justify-content: space-between;
