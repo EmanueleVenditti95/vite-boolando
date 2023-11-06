@@ -1,9 +1,38 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue';
+
 </script>
 
 <template>
-  <HelloWorld />
+  <Header />
 </template>
 
-<style></style>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+</style>
