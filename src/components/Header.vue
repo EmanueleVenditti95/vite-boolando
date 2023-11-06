@@ -30,28 +30,25 @@
 </template>
 
 <style lang="scss" scoped>
-.flex {
-    display: flex;
-}
-
-li {
-    display: inline;
-}
-
 .viewport-container {
     background-color: #FF6900;
     position: sticky;
     z-index: 999;
     top: 0;
-}
 
-.row {
-    justify-content: space-between;
-    align-items: center;
-}
+    .row {
+        justify-content: space-between;
+        align-items: center;
 
-.logo {
-    width: 100px;
-    padding: 10px 0;
+        .logo {
+            width: 100px;
+            padding: 10px 0;
+        }
+
+        li {
+            display: inline;
+        }
+    }
+
 }
 </style>
