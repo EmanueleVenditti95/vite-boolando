@@ -20,7 +20,7 @@ export default {
                 <img class="img-hover" :src="item.backImage" alt="">
             </div>
             <div class="square">
-                <div v-for="badge, index in item.badges" :key="index" 
+                <div v-for="badge, index in item.badges.slice().reverse()" :key="index" 
                 :class="badge.type === 'discount' ? 'red-square' : 'green-square'">
                     {{ badge.value }}
                 </div>
