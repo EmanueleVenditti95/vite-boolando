@@ -26,7 +26,8 @@ export default {
                 </div>
             </div>
 
-            <div class="wishlist-badge">&hearts;</div>
+            <div class="wishlist-badge"
+            :class="item.isInFavorites ? 'favorites' : '' ">&hearts;</div>
         </div>
         <div>
             <ul>
@@ -92,6 +93,10 @@ export default {
             right: 0px;
             padding: 5px 10px;
             font-size: 20px;
+        }
+
+        .favorites {
+            color: red;
         }
 
         .wishlist-badge:hover {
