@@ -1,16 +1,29 @@
 <script>
+import cards from "../db.json"
 
+export default {
+    components: {
+    },
+    data() {
+        return {
+            products: cards.products
+        }
+    },
+    created() {
+        console.log(this.products)
+    }
+}
 </script>
 
 <template>
     <main class="container">
         <div class="row">
 
-            <div class="card">
+            <div v-for="card, i in products" :key="i" class="card">
                 <div class="list-pic">
                     <div class="figure">
-                        <img src="/img/1.webp" alt="">
-                        <img class="img-hover" src="/img/1b.webp" alt="">
+                        <img :src="card.frontImage" alt="">
+                        <img class="img-hover" :src="card.backImage" alt="">
                     </div>
                     <div class="square">
                         <div class=" red-square">-50%</div>
@@ -20,103 +33,12 @@
                 </div>
                 <div>
                     <ul>
-                        <li class="brand">Levi's</li>
-                        <li class="item">RELAXED FIT TEE UINSEX</li>
-                        <li class="price">14.99 &euro; <span class="old-price">29.99 &euro;</span></li>
+                        <li class="brand">{{ card.brand }}</li>
+                        <li class="item">{{ card.name }}</li>
+                        <li class="price">{{ card.price }} &euro;</li>
                     </ul>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="list-pic">
-                    <div class="figure">
-                        <img src="/img/2.webp" alt="">
-                        <img class="img-hover" src="/img/2b.webp" alt="">
-                    </div>
-                    <div class="square red-square">-50%</div>
-                    <div class="wishlist-badge">&hearts;</div>
-                </div>
-                <div>
-                    <ul>
-                        <li class="brand">Guess</li>
-                        <li class="item">ROSES TEE</li>
-                        <li class="price">20.99 &euro; <span class="old-price">29.99 &euro;</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="list-pic">
-                    <div class="figure">
-                        <img src="/img/3.webp" alt="">
-                        <img class="img-hover" src="/img/3b.webp" alt="">
-                    </div>
-                    <div class="square red-square">-50%</div>
-                    <div class="wishlist-badge">&hearts;</div>
-                </div>
-                <div>
-                    <ul>
-                        <li class="brand">Come Zucchero Filato</li>
-                        <li class="item">VOGLIA DI COLORI PASTELLO</li>
-                        <li class="price">129.99 &euro; <span class="old-price">184.99 &euro;</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="list-pic">
-                    <div class="figure">
-                        <img src="/img/4.webp" alt="">
-                        <img class="img-hover" src="/img/4b.webp" alt="">
-                    </div>
-                    <div class="square red-square">-50%</div>
-                    <div class="square green-square">Sostenibilità</div>
-                    <div class="wishlist-badge">&hearts;</div>
-                </div>
-                <div>
-                    <ul>
-                        <li class="brand">Levi's</li>
-                        <li class="item">TEE UNISEX</li>
-                        <li class="price">14.99 &euro; <span class="old-price">29.99 &euro;</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="list-pic">
-                    <div class="figure">
-                        <img src="/img/5.webp" alt="">
-                        <img class="img-hover" src="/img/5b.webp" alt="">
-                    </div>
-                    <div class="wishlist-badge">&hearts;</div>
-                </div>
-                <div>
-                    <ul>
-                        <li class="brand">Maya Deluxe</li>
-                        <li class="item">STRIPE BODICE</li>
-                        <li class="price">99.99 &euro;</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="list-pic">
-                    <div class="figure">
-                        <img src="/img/6.webp" alt="">
-                        <img class="img-hover" src="/img/6b.webp" alt="">
-                    </div>
-                    <div class="square green-square">Sostenibilità</div>
-                    <div class="wishlist-badge">&hearts;</div>
-                </div>
-                <div>
-                    <ul>
-                        <li class="brand">Esprit</li>
-                        <li class="item">MAGLIONE - BLACK</li>
-                        <li class="price">29.99 &euro;</li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
 
     </main>
