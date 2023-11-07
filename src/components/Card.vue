@@ -1,61 +1,39 @@
 <script>
-import cards from "../db.json"
-
 export default {
-    components: {
-    },
-    data() {
-        return {
-            products: cards.products
+    props: {
+        item: {
+            type: Object,
+            required: true,
         }
-    },
-    created() {
-        console.log(this.products)
     }
 }
 </script>
 
 <template>
-    <main class="container">
-        <div class="row">
-
-            <div v-for="card, i in products" :key="i" class="card">
-                <div class="list-pic">
-                    <div class="figure">
-                        <img :src="card.frontImage" alt="">
-                        <img class="img-hover" :src="card.backImage" alt="">
-                    </div>
-                    <div class="square">
-                        <div class=" red-square">-50%</div>
-                        <div class=" green-square">Sostenibilità</div>
-                    </div>
-                    <div class="wishlist-badge">&hearts;</div>
-                </div>
-                <div>
-                    <ul>
-                        <li class="brand">{{ card.brand }}</li>
-                        <li class="item">{{ card.name }}</li>
-                        <li class="price">{{ card.price }} &euro;</li>
-                    </ul>
-                </div>
+    <div class="card">
+        <div class="list-pic">
+            <div class="figure">
+                <img :src="item.frontImage" alt="">
+                <img class="img-hover" :src="item.backImage" alt="">
             </div>
+            <div class="square">
+                <div class=" red-square">-50%</div>
+                <div class=" green-square">Sostenibilità</div>
+            </div>
+            <div class="wishlist-badge">&hearts;</div>
         </div>
-
-    </main>
+        <div>
+            <ul>
+                <li class="brand">{{ item.brand }}</li>
+                <li class="item">{{ item.name }}</li>
+                <li class="price">{{ item.price }} &euro;</li>
+            </ul>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-.container {
-    padding-bottom: 80px;
-}
-
-.row {
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
 .card {
-    flex-basis: calc(100% / 3);
     padding: 20px 10px;
 
     .list-pic {

@@ -1,18 +1,23 @@
 <script>
 import Header from './components/Header.vue';
-import Main from './components/Main.vue';
+import Card from './components/Card.vue';
 import Footer from './components/Footer.vue';
+import productsObj from "./db.json";
 
 export default {
   components: {
     Header,
-    Main,
+    Card,
     Footer,
+    productsObj
   },
   data() {
     return {
-
+      products: productsObj.products
     }
+  },
+  created() {
+    console.log(this.products)
   }
 };
 
@@ -20,7 +25,15 @@ export default {
 
 <template>
   <Header />
-  <Main />
+
+  <main class="container">
+    <div class="row">
+      <div class="col-4" v-for="card, i in products" :key="i">
+        <Card :item="card" />
+      </div>
+    </div>
+  </main>
+
   <Footer />
 </template>
 

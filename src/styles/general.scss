@@ -53,3 +53,16 @@ body {
     height: 100vh;
     position: relative;
 }
+
+.col-4 {
+    flex-basis: calc((100% / 12) * 4);
+}
+
+main.container {
+    padding-bottom: 80px;
+
+    .row {
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+}
