@@ -4,6 +4,9 @@ export default {
         item: {
             type: Object,
             required: true,
+        },
+        badge: {
+            type: Array
         }
     }
 }
@@ -17,9 +20,12 @@ export default {
                 <img class="img-hover" :src="item.backImage" alt="">
             </div>
             <div class="square">
-                <div class=" red-square">-50%</div>
-                <div class=" green-square">Sostenibilità</div>
+                <div v-for="badge, index in item.badges" :key="index" 
+                :class="badge.type === 'discount' ? 'red-square' : 'green-square'">
+                    {{ badge.value }}
+                </div>
             </div>
+
             <div class="wishlist-badge">&hearts;</div>
         </div>
         <div>
