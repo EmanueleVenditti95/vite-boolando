@@ -10,16 +10,17 @@ export default {
     Header,
     Card,
     Footer,
-    productsObj
+    productsObj,
+    store,
   },
   data() {
     return {
-      products: productsObj.products,
       store,
+      products: store.products.products,
     }
   },
   created() {
-    console.log(this.store)
+    console.log(this.products)
   }
 };
 
@@ -30,7 +31,7 @@ export default {
 
   <main class="container">
     <div class="row">
-      <div class="col-4" v-for="card, i in products" :key="i">
+      <div class="col-4" v-for="card, i in this.products" :key="i">
         <Card :item="card" />
       </div>
     </div>
