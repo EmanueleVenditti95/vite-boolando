@@ -14,19 +14,18 @@ export default {
   },
   data() {
     return {
-      store,
-      products: []
+      store
     }
   },
   created() {
     axios.get('http://localhost:3000/products')
       .then(res => {
-        const products = res.data;
-        this.products = products;
+        console.log(res);
+        this.store.products = res.data;         
       })
   },
   mounted() {
-    console.log(this.products)
+    
   }
 };
 
@@ -37,7 +36,7 @@ export default {
 
   <main class="container">
     <div class="row">
-      <div class="col-4" v-for="card, i in products" :key="i">
+      <div class="col-4" v-for="card, i in store.products" :key="i">
         <Card :item="card" />
       </div>
     </div>
