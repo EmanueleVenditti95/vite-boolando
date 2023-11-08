@@ -2,24 +2,30 @@
 import Header from './components/Header.vue';
 import Card from './components/Card.vue';
 import Footer from './components/Footer.vue';
-import productsObj from "./db.json";
 import { store } from "./store.js";
+import axios from 'axios';
 
 export default {
   components: {
     Header,
     Card,
     Footer,
-    productsObj,
     store,
   },
   data() {
     return {
       store,
-      products: store.products.products,
+      products: []
     }
   },
   created() {
+    axios.get('http://localhost:3000/products')
+      .then(res => {
+        const products = res.data;
+        this.products = products;
+      })
+  },
+  mounted() {
     console.log(this.products)
   }
 };
@@ -31,7 +37,7 @@ export default {
 
   <main class="container">
     <div class="row">
-      <div class="col-4" v-for="card, i in this.products" :key="i">
+      <div class="col-4" v-for="card, i in products" :key="i">
         <Card :item="card" />
       </div>
     </div>
