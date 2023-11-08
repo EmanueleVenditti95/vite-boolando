@@ -4,10 +4,13 @@ export default {
         item: {
             type: Object,
             required: true,
-        },
-        badge: {
-            type: Array
         }
+    },
+    methods: {
+       changeValue(value){
+        value =! value;
+        console.log(value)
+       } 
     }
 }
 </script>
@@ -27,7 +30,11 @@ export default {
             </div>
 
             <div class="wishlist-badge"
-            :class="item.isInFavorites ? 'favorites' : '' ">&hearts;</div>
+            @click="changeValue(item.isInFavorites)"
+            :class="item.isInFavorites ? 'favorites' : '' "
+            >
+                &hearts;
+            </div>
         </div>
         <div>
             <ul>

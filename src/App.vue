@@ -3,6 +3,7 @@ import Header from './components/Header.vue';
 import Card from './components/Card.vue';
 import Footer from './components/Footer.vue';
 import productsObj from "./db.json";
+import { store } from "./store.js";
 
 export default {
   components: {
@@ -13,10 +14,12 @@ export default {
   },
   data() {
     return {
-      products: productsObj.products
+      products: productsObj.products,
+      store,
     }
   },
   created() {
+    console.log(this.store)
   }
 };
 
