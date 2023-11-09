@@ -33,7 +33,7 @@ export default {
         <div>
             <ul>
                 <li class="brand">{{ item.brand }}</li>
-                <li class="item">{{ item.name }}</li>
+                <li class="item" @click="$emit('show',item.name)">{{ item.name }}</li>
                 <li class="price">{{ item.price }} &euro;</li>
             </ul>
         </div>
