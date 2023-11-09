@@ -1,4 +1,4 @@
-.modal {
+.modal__text {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -9,4 +9,15 @@
     max-width: 300px;
     text-align: center;
     border: 1px solid black;
+  }
+
+  .modal::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background-color: rgba(0,0,0,0.5);
   }

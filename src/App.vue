@@ -18,11 +18,12 @@ export default {
     return {
       store,
       productName : '',
+      visible : false,
     }
   },
   computed: {
     products() {
-      return store.products
+      return store.products;
     }
   },
   methods: {
@@ -31,8 +32,12 @@ export default {
         console.log(value) 
        },
        showModal(name){
-        this.productName = name
+        this.productName = name;
         console.log(name)
+        this.visible = true;
+       },
+       hideModal(){
+        this.visible = false;
        } 
     },
   created() {
@@ -60,9 +65,13 @@ export default {
         @show="showModal"/>
       </div>
     </div>
-    <div class="modal">
+    <div 
+    v-show="this.visible"
+    class="modal">
+      <div class="modal__text">
         {{ this.productName }}
-        <i class="fa-regular fa-circle-xmark"></i>
+        <i @click="hideModal" class="fa-regular fa-circle-xmark"></i>
+      </div>       
     </div>
   </main>
 
