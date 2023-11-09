@@ -4,6 +4,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 99;
+    padding: 20px;
     background-color: white;
     width: 100%;
     max-width: 300px;
@@ -20,4 +21,11 @@
     right: 0;
     z-index: 40;
     background-color: rgba(0,0,0,0.5);
+  }
+
+  .close-cross {
+    position: absolute;
+    right: 5px;
+    top : 5px;
+    cursor: pointer;
   }

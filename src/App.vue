@@ -18,6 +18,8 @@ export default {
     return {
       store,
       productName : '',
+      productBrand : '',
+      productPrice : '',
       visible : false,
     }
   },
@@ -31,9 +33,11 @@ export default {
          value = !value;
         console.log(value) 
        },
-       showModal(name){
-        this.productName = name;
-        console.log(name)
+       showModal(item){
+        this.productName = item.name;
+        this.productBrand = item.brand;
+        this.productPrice = item.price;
+        console.log(item.name)
         this.visible = true;
        },
        hideModal(){
@@ -69,8 +73,10 @@ export default {
     v-show="this.visible"
     class="modal">
       <div class="modal__text">
-        {{ this.productName }}
-        <i @click="hideModal" class="fa-regular fa-circle-xmark"></i>
+        <p class="brand">{{ this.productBrand }}</p>
+        <p class="item">{{ this.productName }}</p>
+        <p class="price">{{ this.productPrice }}</p>
+        <i @click="hideModal" class="fa-regular fa-circle-xmark close-cross"></i>
       </div>       
     </div>
   </main>

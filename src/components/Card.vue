@@ -33,7 +33,7 @@ export default {
         <div>
             <ul>
                 <li class="brand">{{ item.brand }}</li>
-                <li class="item" @click="$emit('show',item.name)">{{ item.name }}</li>
+                <li class="item" @click="$emit('show',item)">{{ item.name }}</li>
                 <li class="price">{{ item.price }} &euro;</li>
             </ul>
         </div>
@@ -105,19 +105,7 @@ export default {
         }
     }
 
-    .brand {
-        color: grey;
-        font-size: small;
-    }
-
-    .item {
-        font-weight: 800;
-    }
-
-    .price {
-        font-size: small;
-        color: red;
-    }
+    
 
     .old-price {
         color: grey;
