@@ -6,12 +6,6 @@ export default {
             required: true,
         }
     },
-    methods: {
-       changeValue(value){
-        value =! value;
-        console.log(value)
-       } 
-    }
 }
 </script>
 
@@ -30,7 +24,7 @@ export default {
             </div>
 
             <div class="wishlist-badge"
-            @click="changeValue(item.isInFavorites)"
+            @click="$emit('addFavorite',item.isInFavorites)"
             :class="item.isInFavorites ? 'favorites' : '' "
             >
                 &hearts;

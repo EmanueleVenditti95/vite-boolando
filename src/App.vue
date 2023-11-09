@@ -17,6 +17,17 @@ export default {
       store
     }
   },
+  computed: {
+    products() {
+      return store.products
+    }
+  },
+  methods: {
+       changeValue(value){
+         value = !value;
+        console.log(value) 
+       } 
+    },
   created() {
     axios.get('http://localhost:3000/products')
       .then(res => {
@@ -36,8 +47,8 @@ export default {
 
   <main class="container">
     <div class="row">
-      <div class="col-4" v-for="card, i in store.products" :key="i">
-        <Card :item="card" />
+      <div class="col-4" v-for="card, i in products" :key="i">
+        <Card :item="card" @addFavorite="changeValue" />
       </div>
     </div>
   </main>
