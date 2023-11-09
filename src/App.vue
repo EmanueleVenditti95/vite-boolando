@@ -21,6 +21,7 @@ export default {
       productBrand : '',
       productPrice : '',
       visible : false,
+      activeProduct: {}
     }
   },
   computed: {
@@ -30,18 +31,17 @@ export default {
   },
   methods: {
        changeValue(value){
-         value = !value;
-        console.log(value) 
+          value = !value;
+          console.log(value) 
        },
        showModal(item){
-        this.productName = item.name;
-        this.productBrand = item.brand;
-        this.productPrice = item.price;
+        this.activeProduct = item;
         console.log(item.name)
         this.visible = true;
        },
        hideModal(){
         this.visible = false;
+        this.activeProduct = {};
        } 
     },
   created() {
@@ -69,16 +69,7 @@ export default {
         @show="showModal"/>
       </div>
     </div>
-    <div 
-    v-show="this.visible"
-    class="modal">
-      <div class="modal__text">
-        <p class="brand">{{ this.productBrand }}</p>
-        <p class="item">{{ this.productName }}</p>
-        <p class="price">{{ this.productPrice }}</p>
-        <i @click="hideModal" class="fa-regular fa-circle-xmark close-cross"></i>
-      </div>       
-    </div>
+    <Modal v-show="visible" :item="activeProduct" @click="hideModal"/>
   </main>
 
   <Footer />
@@ -86,5 +77,4 @@ export default {
 
 <style lang="scss">
 @use './styles/general.scss';
-@use './styles/modal.scss';
 </style>

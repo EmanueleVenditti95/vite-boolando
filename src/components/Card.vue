@@ -24,7 +24,7 @@ export default {
             </div>
 
             <div class="wishlist-badge"
-            @click="$emit('addFavorite',item.isInFavorites)"
+            @click="item.isInFavorites = !item.isInFavorites"
             :class="item.isInFavorites ? 'favorites' : '' "
             >
                 &hearts;
